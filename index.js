@@ -77,7 +77,7 @@ function atmostFive(n) {
 atmostFive(10);
 
 //Space complexicity or Auxiliary space complexicity
-//It refers to space required by the algorithm, not including space taken up by 
+//It refers to space required by the algorithm, not including space taken up by
 //the inputs
 //most primitives (boolean,number,null,undefined) are constant
 //string requires O(n) space, where n is the string length
@@ -107,3 +107,76 @@ function doubleArray(arr) {
   return newArray;
 }
 console.log(doubleArray([1, 2, 3, 4, 5]));
+
+//Lesson2
+
+//Objects
+//use when you dont need order and need fast insertion, access and removal all
+//are (O(1)) but searching is O(n)
+//keys,values and entries are 0(n) and hasOwnProperty is O(1)
+let shilpi = {
+  name: "shilpi",
+  age: 24,
+  favColor: "lavender",
+  isMarried: false,
+  friends: ["rupali", "anjali", "rajat", "rahul"]
+};
+console.log(Object.keys(shilpi));
+console.log(Object.values(shilpi));
+console.log(Object.entries(shilpi));
+console.log(shilpi.hasOwnProperty("name"));
+console.log(shilpi.hasOwnProperty("work"));
+delete shilpi.age;
+console.log(shilpi);
+
+//Arrays
+//accessing: O(1)
+//searching: O(n)
+//insertion: O(n) if insertion is in beggining
+//removal: O(n) if removal is in beggining
+//push and pop is fast as shift and unshift
+//concat:O(n)
+//slice:O(n)
+//splice:O(n)
+//filter:O(n)
+//reduce:O(n)
+//forEach/forMap:O(n)
+
+const item1 = ["sheldon", "penny", "raj", "lenord", "howard"];
+const item2 = ["monica", "rachel", "ross", "joey", "chandler", "phoebe"];
+console.log(item1.concat(item2));
+console.log(item1.slice(1, 5)); //slice the array from given position to  given
+//position but end not included
+let girls = ["penny", "rachel", "monica", "phoebe"];
+girls.splice(2, 0, "bernie", "amy");
+console.log(girls);
+item1.splice(0, 3);
+console.log(item1);
+item2.splice(0, 2, "denerys", "sansa");
+console.log(item2);
+
+var ages = [12, 16, 17, 19, 23, 34, 35, 24, 25];
+var result = ages.filter(age => {
+  return age >= 18;
+});
+console.log(result);
+
+//Lesson: 3
+
+//What is Algorithm?
+//A process or set of steps to accomplish a certain task.
+
+//Problem solving approach:
+
+//1. Understand the problem
+//can i restate the problem in my own words?
+//think of what is input and what will be the output
+
+//2. Explore concrete examples
+//start with a simple example
+//then progess to complex example
+//explore examples with empty input
+//explore example with invalid input
+
+//3. Break it down
+//write out the steps you need to take
