@@ -24,14 +24,20 @@ function addUpTo(n) {
   }
   return total;
 }
-console.log(addUpTo(3));
+let t1 = performance.now();
+addUpTo(1000000000);
+let t2 = performance.now();
+console.log(`Time between test1: ${(t2 - t1) / 1000} seconds`);
 
 //O(1)
 
 function addUpTo2(n) {
   return (n * (n + 1)) / 2;
 }
-console.log(addUpTo2(3));
+let t3 = performance.now();
+addUpTo2(1000000000);
+let t4 = performance.now();
+console.log(`Time between test2: ${(t4 - t3) / 1000} seconds`);
 
 //O(n)   (O(n)+O(n)=2*O(N))
 
@@ -180,3 +186,7 @@ console.log(result);
 
 //3. Break it down
 //write out the steps you need to take
+
+//4. Solve/Simplify
+
+//5. Look back and refactor
