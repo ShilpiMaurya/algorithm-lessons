@@ -1,5 +1,3 @@
-console.log("Let's begin");
-
 //Lesson 1
 
 //Big O notation
@@ -112,7 +110,7 @@ function doubleArray(arr) {
   }
   return newArray;
 }
-console.log(doubleArray([1, 2, 3, 4, 5]));
+console.log(doubleArray([1, 2, 3, 4, 5]), "double array");
 
 //Lesson2
 
@@ -190,3 +188,61 @@ console.log(result);
 //4. Solve/Simplify
 
 //5. Look back and refactor
+
+//How to Improve?
+//1.Devise a plan for solving problems
+//2.Master common problem solving patterns
+
+//Frequency Counter
+
+function same(arr) {
+  let final = [];
+  for (let i = 0; i < arr.length; i++) {
+    final.push(arr[i] * arr[i]);
+  }
+  return final;
+}
+
+const isArrayEqual = (array1, array2) => {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+  for (let j = 0; j < array1.length; j++) {
+    if (array1[j] !== array2[j]) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+};
+// console.log(isArrayEqual(same([2, 3, 4, 5]), [4, 9, 16, 25]));
+
+//using frequency counter
+
+//anagram challenge
+
+function validAnagram(first, second) {
+  if (first.length !== second.lenght) {
+    return false;
+  }
+  const lookout = {};
+  for (let i = 0; i < first.lenght; i++) {
+    let letter = first[i];
+    lookout[letter] ? (lookout[letter] += 1) : (lookout[letter] = 1);
+  }
+  for (let i = 0; i < second.lenght; i++) {
+    let letter = second[i];
+    if (!lookout[letter]) {
+      return false;
+    } else {
+      lookout[letter] -= 1;
+    }
+  }
+  return true;
+}
+console.log(validAnagram("shilpi", "iplihsj"));
+
+// console.log(validAnagram("shilpu", "uplihssb"), "anagram challenge");
+// console.log(validAnagram("shilpu", "uplihs"), "anagram challenge");
+// console.log(validAnagram("shilp", "uplihssb"), "anagram challenge");
+// console.log(validAnagram("shilpu", "uplihssb"), "anagram challenge");
